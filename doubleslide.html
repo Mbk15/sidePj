@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .house {
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 400px;
+        justify-content: center;
+        align-items: center;
+      }
+      .room {
+        /* background-color: aqua; */
+        background: -webkit-linear-gradient(to right, #a4c4b5, #87e9bb);
+        background: linear-gradient(to right, #a4c4b5, #269e66);
+        width: 400px;
+        min-height: 580px;
+      }
+
+      .dinning {
+        width: 400px;
+        height: 580px;
+      }
+
+      .parag {
+        font-size: 14px;
+        font-weight: 100;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+      }
+
+      .spannnner {
+        font-size: 12px;
+      }
+
+      .styledlink {
+        color: #333;
+        font-size: 14px;
+        text-decoration: none;
+        margin: 15px 0;
+      }
+
+      .ghost-btn {
+        border-radius: 20px;
+        border: 1px solid #696969;
+        background-color: #696969;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 12px 45px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: transform 80ms ease-in;
+      }
+
+      .ghost-btn:active {
+        transform: scale(0.95);
+      }
+
+      .ghost-btn:focus {
+        outline: none;
+      }
+
+      .ghost-btn.ghost {
+        background-color: transparent;
+        border-color: #ffffff;
+        margin-left: 30%;
+      }
+
+      .former {
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 50px;
+        height: 580px;
+        text-align: center;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+          0 10px 10px rgba(0, 0, 0, 0.22);
+      }
+
+      .insideput {
+        background-color: #eee;
+        border: none;
+        padding: 12px 15px;
+        margin: 8px 0;
+        width: 100%;
+      }
+
+      /* Pusher styling for dinner section*/
+
+      .pusher {
+        position: relative;
+        padding: 0 1rem 0 3.5rem;
+        list-style: none;
+        text-align: center;
+        color: white;
+      }
+
+      .pusher__item {
+        position: relative;
+        min-height: 65px;
+        counter-increment: list;
+        padding-left: 0.5rem;
+      }
+      .pusher__item:before {
+        content: "";
+        position: absolute;
+        left: -1.5rem;
+        top: 33px;
+        height: 60%;
+        width: 1px;
+        border-left: 1px solid #fff;
+      }
+      .pusher__item:after {
+        content: counter(list);
+        position: absolute;
+        top: 0;
+        left: -2.5rem;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: transparent;
+        color: #fff;
+        font-weight: 400;
+        line-height: 2rem;
+        border: 1px solid #fff;
+      }
+      .pusher__item:last-child:before {
+        border: none;
+      }
+      .pusher__item.pusher__item--completed {
+        opacity: 0.6;
+        color: #fff;
+      }
+      .pusher__item.pusher__item--completed:after {
+        content: "\2713";
+        font-weight: 400;
+        background: #fff;
+      }
+
+      .pusher__title {
+        padding: 0.4rem 0 0.5rem;
+        margin: 0;
+        font-size: 1.5rem;
+      }
+
+      .pusher__info {
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+      .bird {
+        width: 90%;
+        height: auto;
+        margin-bottom: 70px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="house">
+      <div class="dinning">
+        <div class="former-toppings sign-in-toppings">
+          <form class="former" action="#">
+            <h1>Unify Forms</h1>
+            <div class="social-toppings">
+              <img class="logo" src="page2.png" />
+            </div>
+            <span class="spannnner">or use your account</span>
+            <input class="insideput" type="email" placeholder="Email" />
+            <input class="insideput" type="password" placeholder="Password" />
+            <a class="styledlink" href="#">Forgot your password?</a>
+            <button class="ghost-btn">Sign In</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="room">
+        <div class="overturn-toppings">
+          <div class="overturn">
+            <div class="overturn-piner overturn-right">
+              <img
+                class="bird"
+                src="http://projectdemo.com.ng/colab/sites/default/files/bird.png"
+              />
+
+              <ul class="pusher">
+                <li class="pusher__item pusher__item">
+                  <p class="parag pusher__info">
+                    We make it visible to prospective students
+                  </p>
+                </li>
+                <li class="pusher__item pusher__item--active">
+                  <p class="parag pusher__info">
+                    They fill the form and make payment
+                  </p>
+                </li>
+                <li class="pusher__item">
+                  <p class="parag pusher__info">
+                    You view all completed forms!
+                  </p>
+                </li>
+              </ul>
+
+              <button
+                onclick="window.location.href='http://projectdemo.com.ng/colab//user/register'"
+                class="ghost-btn ghost"
+                id="signUp"
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
