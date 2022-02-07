@@ -1,0 +1,33 @@
+<html>
+<audio id="demo" src="http://media.dawahnigeria.com/dnlectures2/Ustadh%20Abdul%20Ganiy%20Jum'ah%20(Lagos)/Q&A/Ustadh%20Abdul%20Ganiyy%20Jum'ah_Halqoh%20-%20Q%20&%20A%20Session%20(Feb-6-2021)%20(Yoruba)_DN.mp3" controls></audio>
+<div>
+  <button onclick="document.getElementById('demo').play()">Play the Audio</button>
+  <br>
+  <button onclick="document.getElementById('demo').pause()">Pause the Audio</button>
+  <br>
+  <button onclick="document.getElementById('demo').volume+=0.1">Increase Volume</button>
+  <br>
+  <button onclick="document.getElementById('demo').volume-=0.1">Decrease Volume</button>
+  <br>
+  Jump to <input id="time" type="text" value="30"> (in seconds)</input>
+  <br>
+  <button onclick="document.getElementById('demo').currentTime=document.getElementById('time').value">Jump</button>
+</div>
+
+
+
+<audio id="audio2" 
+       preload="auto" 
+       src="http://media.dawahnigeria.com/dnlectures2/Ustadh%20Abdul%20Ganiy%20Jum'ah%20(Lagos)/Q&A/Ustadh%20Abdul%20Ganiyy%20Jum'ah_Halqoh%20-%20Q%20&%20A%20Session%20(Feb-6-2021)%20(Yoruba)_DN.mp3#t=00:12:26,00:15:06" 
+       oncanplaythrough="this.play();" controls>
+</audio>
+
+<div
+role= "status"
+aria-live ="polite"
+aria-busy="true"
+class="loader"
+>
+<span class = "visually-hidden">Loading</span>
+</div>
+</html>
