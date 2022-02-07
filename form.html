@@ -1,0 +1,272 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .register-photo {
+        background: #f1f7fc;
+        padding: 80px 0;
+      }
+
+      .register-photo .image-holder {
+        display: table-cell;
+        width: auto;
+        background: url(https://i.imgur.com/Fqm9rWL.jpg);
+        background-size: cover;
+      }
+
+      .register-photo .form-container {
+        display: table;
+        max-width: 900px;
+        width: 90%;
+        margin: 0 auto;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .register-photo form {
+        display: table-cell;
+        width: 400px;
+        background-color: #ffffff;
+        /* padding: 4px 6px; */
+        color: #505e6c;
+      }
+
+      @media (max-width: 991px) {
+        .register-photo form {
+          padding: 40px;
+        }
+      }
+
+      .register-photo form h2 {
+        font-size: 24px;
+        line-height: 1.5;
+        margin-bottom: 30px;
+      }
+
+      .register-photo form .form-control {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #dfe7f1;
+        border-radius: 0;
+        box-shadow: none;
+        outline: none;
+        color: inherit;
+        text-indent: 0px;
+        height: 40px;
+      }
+
+      .register-photo form .form-check {
+        font-size: 13px;
+        line-height: 20px;
+      }
+
+      .register-photo form .btn-primary {
+        background: green;
+        border: none;
+        border-radius: 4px;
+        padding: 11px;
+        box-shadow: none;
+        margin-top: 35px;
+        text-shadow: none;
+        outline: none !important;
+      }
+
+      .register-photo form .btn-primary:hover,
+      .register-photo form .btn-primary:active {
+        background: green;
+      }
+
+      .register-photo form .btn-primary:active {
+        transform: translateY(1px);
+      }
+
+      .register-photo form .already {
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        color: #6f7a85;
+        opacity: 0.9;
+        text-decoration: none;
+      }
+      .btn-lg {
+        padding: 0.5rem 1rem;
+        font-size: 1.25rem;
+        line-height: 1.5;
+        border-radius: 0.3rem;
+      }
+      .btn-block {
+        display: block;
+        width: 90%;
+        margin-left: 12px;
+      }
+
+      .btn-block + .btn-block {
+        margin-top: 0.5rem;
+      }
+
+      .btn-outline-primary {
+        color: #007bff;
+        background-color: transparent;
+        background-image: none;
+        border-color: #007bff;
+      }
+      .btn-outline-primary:hover {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+      .btn-outline-primary.focus,
+      .btn-outline-primary:focus {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+      }
+      .btn-outline-primary.disabled,
+      .btn-outline-primary:disabled {
+        color: #007bff;
+        background-color: transparent;
+      }
+      .btn-outline-primary:not(:disabled):not(.disabled).active,
+      .btn-outline-primary:not(:disabled):not(.disabled):active,
+      .show > .btn-outline-primary.dropdown-toggle {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+      .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+      .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+      .show > .btn-outline-primary.dropdown-toggle:focus {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+      }
+      .btn-outline-warning {
+        color: #ffc107;
+        background-color: transparent;
+        background-image: none;
+        border-color: #ffc107;
+      }
+      .btn-outline-warning:hover {
+        color: #212529;
+        background-color: #ffc107;
+        border-color: #ffc107;
+      }
+      .btn-outline-warning.focus,
+      .btn-outline-warning:focus {
+        box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
+      }
+      .btn-outline-warning.disabled,
+      .btn-outline-warning:disabled {
+        color: #ffc107;
+        background-color: transparent;
+      }
+      .btn-outline-warning:not(:disabled):not(.disabled).active,
+      .btn-outline-warning:not(:disabled):not(.disabled):active,
+      .show > .btn-outline-warning.dropdown-toggle {
+        color: #212529;
+        background-color: #ffc107;
+        border-color: #ffc107;
+      }
+      .btn-outline-warning:not(:disabled):not(.disabled).active:focus,
+      .btn-outline-warning:not(:disabled):not(.disabled):active:focus,
+      .show > .btn-outline-warning.dropdown-toggle:focus {
+        box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
+      }
+      .btn-outline-success {
+        color: #28a745;
+        background-color: transparent;
+        background-image: none;
+        border-color: #28a745;
+      }
+      .btn-outline-success:hover {
+        color: #fff;
+        background-color: #28a745;
+        border-color: #28a745;
+      }
+      .btn-outline-success.focus,
+      .btn-outline-success:focus {
+        box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+      }
+      .btn-outline-success.disabled,
+      .btn-outline-success:disabled {
+        color: #28a745;
+        background-color: transparent;
+      }
+      .btn-outline-success:not(:disabled):not(.disabled).active,
+      .btn-outline-success:not(:disabled):not(.disabled):active,
+      .show > .btn-outline-success.dropdown-toggle {
+        color: #fff;
+        background-color: #28a745;
+        border-color: #28a745;
+      }
+      .btn-outline-success:not(:disabled):not(.disabled).active:focus,
+      .btn-outline-success:not(:disabled):not(.disabled):active:focus,
+      .show > .btn-outline-success.dropdown-toggle:focus {
+        box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+      }
+      .border-primary {
+        border-color: #007bff !important;
+      }
+      .border {
+        border: 1px solid #dee2e6 !important;
+      }
+      .border-success {
+        border-color: #28a745 !important;
+      }
+      .rounded {
+        border-radius: 0.25rem !important;
+      }
+      .wra {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .mom {
+        height: 500px;
+        width: 400px;
+        background-color: whitesmoke;
+        padding-top: 2%;
+        border-radius: 50px 50px 50px 50px;
+      }
+
+      #head {
+        text-align: center;
+        margin-bottom: 20%;
+      }
+      .btn {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="register-photo">
+      <div class="form-container">
+        <div class="image-holder"></div>
+        <form method="post">
+          <div class="mom rounded border border-primary">
+            <div id="head"><h1>Create a form</h1></div>
+
+            <button
+              type="button"
+              style="font-size: 15px"
+              class="btn btn-lg btn-block btn-outline-primary"
+            >
+              Create new form from scratch
+            </button>
+            <button
+              type="button"
+              style="font-size: 15px"
+              class="btn btn-lg btn-block btn-outline-warning"
+            >
+              Select a template
+            </button>
+            <button
+              type="button"
+              style="font-size: 15px"
+              class="btn btn-lg btn-block btn-outline-success"
+            >
+              Clone your previously submitted form
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
