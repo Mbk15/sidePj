@@ -1,0 +1,130 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="makepayment copy.css" />
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Ubuntu");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  background: #2196f3;
+  margin: 0 10px;
+}
+p {
+  text-align: center;
+}
+
+.payment {
+  background: #f8f8f8;
+  max-width: 360px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: auto;
+  padding: 35px;
+  padding-top: 70px;
+  border-radius: 5px;
+}
+.payment h2 {
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #00a65a;
+}
+.payment p {
+  color: black;
+}
+
+.table {
+  margin: 0 auto;
+}
+th {
+  background-color: #f8f8f8 !important;
+  color: black !important;
+  padding: 16px !important;
+}
+td {
+  color: black;
+  text-align: center;
+}
+.table th,
+.table td {
+  text-align: left;
+  font-size: 16px;
+  padding: 10px 10px;
+  border: 0.2px solid wheat;
+  border-radius: 1px;
+}
+.btn-success {
+  font-size: 18px;
+}
+
+.payment-logo {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  background: #f8f8f8;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  line-height: 85px;
+}
+
+.payment-logo:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 90px;
+  height: 90px;
+  background: #00a65a;
+  border-radius: 50%;
+}
+.circular--square {
+  border-radius: 50%;
+  position: relative;
+  width: 65px;
+  height: 65px;
+}
+
+.payment-logo p {
+  position: relative;
+  color: #f8f8f8;
+  font-family: "Baloo Bhaijaan", cursive;
+  font-size: 58px;
+}
+
+  </style>
+</head>
+
+<div class="payment">
+  <div class="payment-logo"><p>P</p></div>
+
+  <h2>Payment Gateway</h2>
+  <table class="table table-bordered">
+    <tr>
+      <th width="30%">Form Fee :</th>
+
+      <td>#125</td>
+    </tr>
+    <tr>
+      <th width="60%">Unify Portal Fee :</th>
+
+      <td width="60%">#214.56</td>
+    </tr>
+    <tr>
+      <th width="60%">Amount Payable :</th>
+
+      <td width="60%">#400</td>
+    </tr>
+  </table>
+</div>
