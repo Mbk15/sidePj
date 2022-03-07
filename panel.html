@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel closure</title>
+    <style>
+        .accordion {
+  color: #fff;
+  background-color: #00000042;
+  cursor: pointer;
+  padding: 10px 10px;
+  margin-top:20px;
+  width: 100%;
+  border: 1px solid #00000042;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #00000042;
+  border: 1px solid #fc8e2d;
+}
+
+.panel {
+  padding: 0 18px;
+  font-size: 18px;
+  background-color: #00000042;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+    </style>
+  </head>
+  <body>
+   
+    <div class="accordion-div">
+        <button class="accordion"><span class="faq__question-heading">Title1</span></button>
+        <div class="panel">
+          <p style="padding:18px 0;">description1</p>
+        </div>
+      
+        <button class="accordion"><span class="faq__question-heading">Title2</span></button>
+        <div class="panel">
+          <p style="padding:18px 0;">description2</p>
+        </div>
+      
+        <button class="accordion"><span class="faq__question-heading">Title3</span></button>
+        <div class="panel">
+          <p style="padding:18px 0;">description3</p>
+        </div>
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+acc[i].addEventListener("click", function() {
+
+var panel = this.nextElementSibling;
+if (panel.style.maxHeight){
+  panel.style.maxHeight = null;
+} else {
+  let active = document.querySelectorAll(".accordion-div .accordion.active");
+  for(let j = 0; j < active.length; j++){
+    active[j].classList.remove("active");
+    active[j].nextElementSibling.style.maxHeight = null;
+  }
+  this.classList.toggle("active");
+  panel.style.maxHeight = panel.scrollHeight + "px";
+}
+});
+}
+        </script>
+  </body>
+</html>
