@@ -31,7 +31,10 @@ img {
 .image2 {
   float: right;
 }
-
+h1 {
+  text-align: center;
+  font-size: 3em;
+}
 .flex-container {
   display: flex;
   flex-direction: row;
@@ -51,7 +54,7 @@ img {
   margin: 10px;
   color: white;
   font-weight: bold;
-  font-size: 3em;
+  font-size: 2em;
 }
 .first {
   order: 1;
@@ -86,4 +89,46 @@ img {
 }
 .basis {
   flex-basis: 500px;
+}
+.grid-basic {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 10px;
+  margin-top: 40px;
+}
+.basic__item {
+  background: grey;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+}
+.grid-gap {
+  display: grid;
+  grid-template-columns: 40% 30% 30%;
+  gap: 1em;
+  margin-top: 40px;
+}
+
+.gap__item {
+  background: rgb(209, 10, 166);
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.grid-fraction {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.fraction__item {
+  padding: 20px;
+  background: blue;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
 }
