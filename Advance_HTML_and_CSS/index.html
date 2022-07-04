@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ultimate HTML & CSS</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <p>This Paragraph</p>
+      <strong>mbk</strong>
+
+      <em>mbk</em>
+    </div>
+    <article>
+      <p id="output"></p>
+      <button id="result">Result</button>
+      <p>
+        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+        consectetur, adipisci velit..." "There is no one who loves pain itself,
+        who seeks after it and wants to have it, simply because it is pain..." .
+
+        <img
+          class="image1"
+          src="https://unsplash.com/photos/RFrSIiKuuWw/download?ixid=MnwxMjA3fDB8MXxhbGx8OXx8fHx8fDJ8fDE2NTY3NjY4MzU&force=true"
+        />
+      </p>
+
+      <p>
+        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+        consectetur, adipisci velit..." "There is no one who loves pain itself,
+        who seeks after it and wants to have it, simply because it is pain..."
+
+        <img
+          class="image2"
+          src="https://unsplash.com/photos/RFrSIiKuuWw/download?ixid=MnwxMjA3fDB8MXxhbGx8OXx8fHx8fDJ8fDE2NTY3NjY4MzU&force=true"
+        />
+      </p>
+    </article>
+
+    <div class="flex-container">
+      <h1>FLEX LAYOUT</h1>
+      <div class="second flex-item">1</div>
+      <div class="first flex-item">2</div>
+      <div class="fifth flex-item">3</div>
+      <div class="fourth flex-item">4</div>
+      <div class="third flex-item">5</div>
+    </div>
+
+    <div class="flex-wrapper">
+      <h1>FLEX GROW</h1>
+      <div class="flex-item grow-1">1</div>
+      <div class="flex-item grow-2">2</div>
+      <div class="flex-item grow-3">3</div>
+    </div>
+
+    <div style="background: teal" class="flex-wrapper">
+      <h1>FLEX BASIS</h1>
+      <div class="flex-item basis">1</div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+    </div>
+
+    <script>
+      localStorage.setItem("lastname", "SHattry");
+
+      document.getElementById("output").innerHTML =
+        localStorage.getItem("lastname");
+
+      if (sessionStorage.clickcount) {
+        sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+      } else {
+        sessionStorage.clickcount = 1;
+      }
+
+      document.getElementById(
+        "result"
+      ).innerHTML = `You have clicked the button ${sessionStorage.clickount} 'time(s) in this session`;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+div.container {
+  height: 10em;
+  border: 2px solid red;
+  position: relative;
+}
+
+div.container p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+div.container + p {
+  color: red;
+}
+article {
+  border: 3px solid green;
+  width: 500px;
+  height: 500px;
+}
+img {
+  max-width: 100%;
+  width: 250px;
+  height: auto;
+}
+.image1 {
+  float: left;
+}
+
+.image2 {
+  float: right;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: hotpink;
+  padding: 20px;
+  margin: 0;
+}
+.flex-item {
+  background: red;
+  padding: 5px;
+  width: 200px;
+  height: 150px;
+  text-align: center;
+  line-height: 150px;
+  margin: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+}
+.first {
+  order: 1;
+}
+.second {
+  order: 2;
+}
+.third {
+  order: 3;
+}
+.fourth {
+  order: 4;
+}
+.fifth {
+  order: 5;
+}
+.flex-wrapper {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  background: aqua;
+}
+.grow-1 {
+  flex-grow: 1;
+}
+.grow-2 {
+  flex-grow: 2;
+}
+.grow-3 {
+  flex-grow: 3;
+}
+.basis {
+  flex-basis: 500px;
+}
