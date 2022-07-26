@@ -7,11 +7,10 @@ function sumArr(arr) {
   let total = 0;
   for (let index = 0; index < arr.length; index++) {
     total += arr[index];
-    console.log(total);
   }
   return total;
 }
-callMbk([1, 2, 3, 5, 6, 7], sumArr);
+// callMbk([1, 2, 3, 5, 6, 7], sumArr);
 
 const mbkPromise = new Promise((resolve, reject) => {
   const error = false;
@@ -61,17 +60,55 @@ users
   })
   .then((data) => {
     data.forEach((user) => {
-      console.log(user);
+      return user;
     });
   });
 
 //async/await
 
+const myUsers = {
+  userList: [],
+};
+
 const mbkAwait = async () => {
   const response = await fetch(url);
   const data = await response.json();
 
-  console.log(data);
+  return data;
 };
 
 mbkAwait();
+
+//applying await inside await
+
+const awaitSecond = async () => {
+  const jsonUser = await mbkAwait();
+  myUsers.userList = jsonUser;
+  console.log(myUsers.userList);
+};
+awaitSecond();
+console.log(myUsers.userList);
+
+//get All users Email
+
+const getAllUserEmail = async () => {
+  const users = await fetch(url);
+  const response = await users.json();
+
+  const userEmailArray = response.map((user) => {
+    return user.email;
+  });
+
+  postToWebPage(userEmailArray);
+};
+
+getAllUserEmail();
+
+const emailAddress = document.querySelector("#email");
+const postToWebPage = (data) => {
+  const allemail = data.map((email) => {
+    return `<p>${email}</p>`;
+  });
+
+  emailAddress.innerHTML = allemail;
+};
