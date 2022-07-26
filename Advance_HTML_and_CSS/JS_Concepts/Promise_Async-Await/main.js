@@ -60,22 +60,18 @@ users
     return response.json();
   })
   .then((data) => {
-    console.log(data);
+    data.forEach((user) => {
+      console.log(user);
+    });
   });
 
-fetch("https://api.github.com/users")
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+//async/await
 
-// await fetch(url, {
-//   mode: "no-cors",
-// }).then((response) => {
-//   console.log(response);
-// });
+const mbkAwait = async () => {
+  const response = await fetch(url);
+  const data = await response.json();
+
+  console.log(data);
+};
+
+mbkAwait();
