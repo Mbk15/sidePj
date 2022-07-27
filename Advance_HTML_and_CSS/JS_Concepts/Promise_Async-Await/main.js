@@ -22,7 +22,7 @@ const mbkPromise = new Promise((resolve, reject) => {
   }
 });
 
-// console.log(mbkPromise)
+console.log(mbkPromise);
 
 mbkPromise
   .then((value) => {
@@ -112,3 +112,39 @@ const postToWebPage = (data) => {
 
   emailAddress.innerHTML = allemail;
 };
+
+// Second Parameter with Fetch
+
+//Second Parameter of Fetch is an Object
+
+const getDadJoke = async () => {
+  const dadJoke = await fetch("https://icanhazdadjoke.com/", {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+    },
+  });
+
+  const jokeData = await dadJoke.json();
+
+  console.log(jokeData.joke);
+};
+
+getDadJoke();
+
+//loging text instead of json
+
+const getTextJoke = async () => {
+  const dadJoke = await fetch("https://icanhazdadjoke.com/", {
+    method: "GET",
+    headers: {
+      Accept: "text/plain",
+    },
+  });
+
+  const jokeText = await dadJoke.text();
+
+  console.log(jokeText);
+};
+
+getDadJoke();
