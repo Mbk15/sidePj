@@ -127,7 +127,7 @@ const getDadJoke = async () => {
 
   const jokeData = await dadJoke.json();
 
-  console.log(jokeData.joke);
+  console.log(jokeData);
 };
 
 getDadJoke();
@@ -138,13 +138,36 @@ const getTextJoke = async () => {
   const dadJoke = await fetch("https://icanhazdadjoke.com/", {
     method: "GET",
     headers: {
-      Accept: "text/plain",
+      Accept: "text/plain", // change from application/json to text/plain
     },
   });
 
-  const jokeText = await dadJoke.text();
+  const jokeText = await dadJoke.text(); // text method call instead of json method call
 
   console.log(jokeText);
 };
 
-getDadJoke();
+getTextJoke();
+
+//Posting data
+
+const jokeObject = {
+  id: "6MZor4T79pb",
+  joke: "Why do trees seem suspicious on sunny days? Dunno, they're just a bit shady.",
+};
+
+const postJoke = async (jokeData) => {
+  const response = await fetch("https://httpbin.org/post", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(jokeData),
+  });
+
+  const sendJoke = await response.json();
+
+  console.log(sendJoke.headers);
+};
+
+postJoke(jokeObject);
