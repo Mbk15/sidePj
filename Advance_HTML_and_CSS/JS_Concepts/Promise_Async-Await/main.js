@@ -171,3 +171,17 @@ const postJoke = async (jokeData) => {
 };
 
 postJoke(jokeObject);
+
+//Retrieving data with URL parameters
+
+const requestJoke = async (firstName, lastName) => {
+  const response = await fetch(
+    `http://api.icndb.com/jokes/random?firstName=${firstName}&lastName=${lastName}&limitTo=[nerdy]`
+  );
+
+  const getJoke = await response.json();
+
+  console.log(getJoke.value.joke); // get customized joke
+};
+
+requestJoke("Ash-shattry", "Munkamish");
