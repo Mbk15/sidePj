@@ -171,3 +171,55 @@ const postJoke = async (jokeData) => {
 };
 
 postJoke(jokeObject);
+
+//Retrieving data with URL parameters
+
+const requestJoke = async (firstName, lastName) => {
+  const response = await fetch(
+    `http://api.icndb.com/jokes/random?firstName=${firstName}&lastName=${lastName}&limitTo=[nerdy]`
+  );
+
+  const getJoke = await response.json();
+
+  console.log(getJoke.value.joke); // get customized joke
+};
+
+requestJoke("Ash-shattry", "Munkamish");
+
+//abstract into a function
+
+// submitted data
+const getFormData = () => {
+  const requestObj = {
+    firstName: "Mubarak",
+    lastName: "Jamiu",
+    categories: ["nerdy"],
+  };
+  return requestObj;
+};
+
+const buildRequestUrl = (reqData) => {
+  return `http://api.icndb.com/jokes/random?firstName=${reqData.firstName}&lastName=${reqData.lastName}&limitTo=${reqData.categories}`;
+};
+
+const logJoke = async (url) => {
+  const response = await fetch(url);
+
+  const getJoke = await response.json();
+  const joke = getJoke.value.joke;
+  postItOut(joke); // get customized joke
+};
+const postItOut = (joke) => {
+  console.log(joke);
+};
+
+// procees request "workflow"
+
+const proceesRequest = async () => {
+  const requestData = getFormData();
+  const processUrl = buildRequestUrl(requestData);
+  await logJoke(processUrl);
+  console.log("E don do !");
+};
+
+proceesRequest();
